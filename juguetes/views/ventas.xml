@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <act_window id="juguetes_ventas_action" name="Ventas"
+                     res_model="juguetes.ventas"/>
+
+        <menuitem id="juguetes_ventas_menu"
+                  name="Ventas"
+                  action="juguetes_ventas_action"
+                  parent="menu_inicio"
+                  sequence="1"/>
+
+        <record id="juguetes_juguetes_view_tree" model="ir.ui.view">
+            <field name="name">Lista ventas</field>
+            <field name="model">juguetes.ventas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="vcodigo"/>
+                    <field name="vempleado"/>
+                    <field name="vcliente"/>
+					<field name="vtotal"/>
+					<field name="vpagado"/>
+					<field name="vjuguete"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="juguetes_juguetes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de ventas</field>
+            <field name="model">juguetes.ventas</field>
+            <field name="arch" type="xml">
+                <form>
+					<header>
+                        <button name="pagado" type="object" string="Pagado" class="oe_highlight" />
+					</header>
+                    <group>
+						<field name="vcodigo"/>
+						<field name="vempleado"/>
+						<field name="vcliente"/>
+						<field name="vtotal"/>
+						<field name="vpagado"/>
+						<field name="vjuguete"/>
+					</group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juguetes_juguetes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda ventas</field>
+            <field name="model">juguetes.ventas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="vcodigo"/>
+                    <field name="vempleado"/>
+                    <field name="vcliente"/>
+					<field name="vtotal"/>
+					<field name="vpagado"/>
+					<field name="vjuguete"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

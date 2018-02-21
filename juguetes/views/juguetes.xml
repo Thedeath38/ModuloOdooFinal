@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <act_window id="juguetes_juguetes_action" name="Juguetes"
+                     res_model="juguetes.juguetes"/>
+		
+		<menuitem name="Juguetes" id="menu_juguetes" sequence="10" />
+        <menuitem name="Inicio" id="menu_inicio" parent="menu_juguetes" sequence="10"/>
+		
+        <menuitem id="juguetes_juguetes_menu"
+                  name="Juguetes"
+                  action="juguetes_juguetes_action"
+                  parent="menu_inicio"
+                  sequence="2"/>
+
+        <record id="juguetes_juguetes_view_tree" model="ir.ui.view">
+            <field name="name">Lista juguetes</field>
+            <field name="model">juguetes.juguetes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo"/>
+                    <field name="nombre"/>
+                    <field name="precio"/>
+                    <field name="stock"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="juguetes_juguetes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de juguetes</field>
+            <field name="model">juguetes.juguetes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo"/>
+                        <field name="nombre"/>
+                        <field name="precio"/>
+                        <field name="stock"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juguetes_juguetes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda juguetes</field>
+            <field name="model">juguetes.juguetes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo"/>
+                        <field name="nombre"/>
+                        <field name="precio"/>
+                        <field name="stock"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>

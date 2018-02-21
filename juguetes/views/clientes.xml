@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <data>
+        <act_window id="juguetes_clientes_action" name="Clientes"
+                     res_model="juguetes.clientes"/>
+
+        <menuitem id="juguetes_clientes_menu"
+                  name="Clientes"
+                  action="juguetes_clientes_action"
+                  parent="menu_inicio"
+                  sequence="4"/>
+
+        <record id="juguetes_clientes_view_tree" model="ir.ui.view">
+            <field name="name">Lista clientes</field>
+            <field name="model">juguetes.clientes</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="codigo"/>
+                    <field name="nombre"/>
+                    <field name="dni"/>
+                    <field name="telefono"/>
+                    <field name="direccion"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="juguetes_clientes_view_form" model="ir.ui.view">
+            <field name="name">Formulario de clientes</field>
+            <field name="model">juguetes.clientes</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                        <field name="codigo"/>
+                        <field name="nombre"/>
+                        <field name="dni"/>
+                        <field name="telefono"/>
+                        <field name="direccion"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="juguetes_clientes_view_search" model="ir.ui.view">
+            <field name="name">Busqueda clientes</field>
+            <field name="model">juguetes.clientes</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="codigo"/>
+                    <field name="nombre"/>
+                    <field name="dni"/>
+                    <field name="telefono"/>
+                    <field name="direccion"/>
+                </search>
+            </field>
+        </record>
+    </data>
+</odoo>
